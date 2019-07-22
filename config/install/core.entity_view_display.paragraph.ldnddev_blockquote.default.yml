@@ -1,0 +1,33 @@
+uuid: 8ada143d-cedf-4f8a-b731-d6e85985a622
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ldnddev_blockquote.field_ldnddev_blockquote_css
+    - field.field.paragraph.ldnddev_blockquote.field_ldnddev_blockquote_item
+    - paragraphs.paragraphs_type.ldnddev_blockquote
+  module:
+    - entity_reference_revisions
+id: paragraph.ldnddev_blockquote.default
+targetEntityType: paragraph
+bundle: ldnddev_blockquote
+mode: default
+content:
+  field_ldnddev_blockquote_css:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ldnddev_blockquote_item:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

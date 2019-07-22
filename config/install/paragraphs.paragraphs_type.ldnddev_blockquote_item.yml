@@ -1,0 +1,9 @@
+uuid: 20660440-32bb-449e-935b-3332d26e12c5
+langcode: en
+status: true
+dependencies: {  }
+id: ldnddev_blockquote_item
+label: 'ldnddev Blockquote Item'
+icon_uuid: null
+description: 'This bundle is used to add a Blockquote Item to the Blockquote bundle.'
+behavior_plugins: {  }

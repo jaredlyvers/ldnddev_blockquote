@@ -1,0 +1,51 @@
+uuid: b463da85-375a-4a2d-92cd-8d7fb38eca3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ldnddev_blockquote_item.field_ldnddev_blockquote_bio
+    - field.field.paragraph.ldnddev_blockquote_item.field_ldnddev_blockquote_image
+    - field.field.paragraph.ldnddev_blockquote_item.field_ldnddev_blockquote_name
+    - field.field.paragraph.ldnddev_blockquote_item.field_ldnddev_blockquote_title
+    - paragraphs.paragraphs_type.ldnddev_blockquote_item
+  module:
+    - image
+    - text
+id: paragraph.ldnddev_blockquote_item.default
+targetEntityType: paragraph
+bundle: ldnddev_blockquote_item
+mode: default
+content:
+  field_ldnddev_blockquote_bio:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_ldnddev_blockquote_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_ldnddev_blockquote_name:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ldnddev_blockquote_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

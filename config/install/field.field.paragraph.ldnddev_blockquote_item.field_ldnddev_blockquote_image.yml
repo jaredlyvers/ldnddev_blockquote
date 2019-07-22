@@ -1,0 +1,38 @@
+uuid: 4bf549e1-8c12-45be-96c4-ecaa7bef35b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ldnddev_blockquote_image
+    - paragraphs.paragraphs_type.ldnddev_blockquote_item
+  module:
+    - image
+id: paragraph.ldnddev_blockquote_item.field_ldnddev_blockquote_image
+field_name: field_ldnddev_blockquote_image
+entity_type: paragraph
+bundle: ldnddev_blockquote_item
+label: 'Blockquote Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'assets/imgs/blockquote/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'jpg png'
+  max_filesize: '400 KB'
+  max_resolution: 640x640
+  min_resolution: 256x256
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

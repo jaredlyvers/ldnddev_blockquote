@@ -1,0 +1,9 @@
+uuid: c7387825-c15c-4774-8e87-4be720e9c58a
+langcode: en
+status: true
+dependencies: {  }
+id: ldnddev_blockquote
+label: 'ldnddev Blockquote'
+icon_uuid: null
+description: 'This bundle is used to add a Blockquote component to the page.'
+behavior_plugins: {  }

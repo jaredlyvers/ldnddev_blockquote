@@ -1,0 +1,97 @@
+uuid: 5c7e84a3-63c9-4893-a6eb-8bbafd8dd89e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ldnddev_blockquote_item
+    - paragraphs.paragraphs_type.ldnddev_blockquote
+    - paragraphs.paragraphs_type.ldnddev_blockquote_item
+  module:
+    - entity_reference_revisions
+id: paragraph.ldnddev_blockquote.field_ldnddev_blockquote_item
+field_name: field_ldnddev_blockquote_item
+entity_type: paragraph
+bundle: ldnddev_blockquote
+label: 'Blockquote Item'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ldnddev_blockquote_item: ldnddev_blockquote_item
+    target_bundles_drag_drop:
+      ldnddev_accordion:
+        weight: 24
+        enabled: false
+      ldnddev_accordion_item:
+        weight: 25
+        enabled: false
+      ldnddev_add_a_file:
+        weight: 26
+        enabled: false
+      ldnddev_add_a_link:
+        weight: 27
+        enabled: false
+      ldnddev_blockquote:
+        weight: 28
+        enabled: false
+      ldnddev_blockquote_item:
+        enabled: true
+        weight: 29
+      ldnddev_card:
+        weight: 30
+        enabled: false
+      ldnddev_card_item:
+        weight: 31
+        enabled: false
+      ldnddev_file_or_link:
+        weight: 32
+        enabled: false
+      ldnddev_gallery:
+        weight: 33
+        enabled: false
+      ldnddev_gallery_image:
+        weight: 34
+        enabled: false
+      ldnddev_gallery_video:
+        weight: 35
+        enabled: false
+      ldnddev_hero:
+        weight: 36
+        enabled: false
+      ldnddev_hero_image:
+        weight: 37
+        enabled: false
+      ldnddev_hero_video:
+        weight: 38
+        enabled: false
+      ldnddev_layout:
+        weight: 39
+        enabled: false
+      ldnddev_milestone:
+        weight: 40
+        enabled: false
+      ldnddev_milestone_item:
+        weight: 41
+        enabled: false
+      ldnddev_rich_text:
+        weight: 42
+        enabled: false
+      ldnddev_section:
+        weight: 43
+        enabled: false
+      ldnddev_slider:
+        weight: 44
+        enabled: false
+      ldnddev_slider_image:
+        weight: 45
+        enabled: false
+      ldnddev_slider_video:
+        weight: 46
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,45 @@
+uuid: e6df2d1a-2bff-4553-9749-50c1260bbbee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ldnddev_blockquote.field_ldnddev_blockquote_css
+    - field.field.paragraph.ldnddev_blockquote.field_ldnddev_blockquote_item
+    - paragraphs.paragraphs_type.ldnddev_blockquote
+  module:
+    - paragraphs
+id: paragraph.ldnddev_blockquote.default
+targetEntityType: paragraph
+bundle: ldnddev_blockquote
+mode: default
+content:
+  field_ldnddev_blockquote_css:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ldnddev_blockquote_item:
+    type: paragraphs
+    weight: 0
+    settings:
+      title: Blockquote
+      title_plural: Blockquotes
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

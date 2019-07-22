@@ -1,0 +1,11 @@
+ldnddev_blockquote:
+  css:
+    component:
+      assets/css/ldnddev_blockquote.css:
+        minified: false
+  js:
+    assets/js/ldnddev_blockquote.js:
+      minified: false
+  dependencies:
+    - core/jquery
+    - core/drupal

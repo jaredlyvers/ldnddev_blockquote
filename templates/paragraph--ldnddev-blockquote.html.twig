@@ -1,0 +1,16 @@
+{{ attach_library('ldnddev_blockquote/ldnddev_blockquote') }}
+
+{%
+    set classes = [
+        'ldnddev-blockquote'
+    ]
+%}
+{% if content.field_ldnddev_blockquote_css.0 %}
+    {% set classes = classes|merge([content.field_ldnddev_blockquote_css.0|render|clean_class]) %}
+{% endif %}
+
+
+
+<div {{ attributes.addClass(classes) }}>
+    {{ content.field_ldnddev_blockquote_item }}
+</div>

@@ -1,0 +1,165 @@
+// vars
+$brand-01: #262626;
+$brand-02: #3d3d3d;
+$brand-03: #6e6e6e;
+$text-01: #262626;
+$text-02: #6e6e6e;
+$text-03: #9a9a9a;
+$ui-01: #f7f7f7;
+$ui-02: #f2f2f2;
+$ui-03: #e2e2e2;
+$ui-04: #484848;
+$hover-primary: #ff3e3e;
+$hover-secondary: #ad2424;
+$hover-row: #f2f2f2;
+$ldnddev-accordion-tspeed: 0.4s;
+
+/**
+ * px to rem conversion
+ */
+ @function calculateRem($size){
+    $rem_size: $size / 16px;
+    @return #{$rem_size}rem;
+}
+@mixin font_size($size){
+    font-size: $size; // px fallback
+    font-size: calculateRem($size);
+}
+/**
+ * media querie and vars
+ */
+ $breakpoint: (
+    "zero":     0px,
+    "phone":    600px,
+    "tablet":   724px,
+    "desktop":  1024px,
+    "hd":       1440px
+);
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoint, $width) {
+        $width: map_get($breakpoint, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin mq_min_max($min, $max){
+    @if map_has_key($breakpoint, $min){
+        $min: map_get($breakpoint, $min);
+        @if map_has_key($breakpoint, $max){
+            $max: map_get($breakpoint, $max);
+            $max: $max - 1px;
+        }
+        @media only screen and (max-width: $max) and (min-width: $min) {
+            @content;
+        }
+    }
+}
+/**
+ * grid querie and vars
+ */
+ @mixin grid-container{
+    clear: both;
+    display: block;
+    float: none;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin: 0 auto;
+    &::before,
+    &::after{
+        clear: both;
+        content: '';
+        display: table;
+    }
+    @content
+}
+
+$key: (
+    "col-1":            6.5%,
+    "col-2":            15%,
+    "col-3":            23.5%,
+    "col-4":            32%,
+    "col-5":            40.5%,
+    "col-6":            49%,
+    "col-7":            57.5%,
+    "col-8":            66%,
+    "col-9":            74.5%,
+    "col-10":           83%,
+    "col-11":           91.5%,
+    "col-12":           100%,
+    "full":             100%
+);
+
+@mixin grid-column($width, $gutter: 2%) {
+    @if map_has_key($key, $width) {
+        $width: map_get($key, $width);
+        float: left;
+        margin-right: $gutter;
+        width: $width;
+        @content;
+    }
+}
+
+.last{
+    margin-right: 0 !important;
+    clear: right;
+    &::after{
+        clear: both;
+    }
+}
+
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+.ldnddev-blockquote{
+    $parent: &;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    &__items{
+        @include grid-container();
+        &.-two.-c3x9{
+            #{$parent}__item{
+                @include mq(tablet){
+                    &:nth-of-type(1){
+                        @include grid-column(col-3);
+                    }
+                    &:nth-of-type(2){
+                        @include grid-column(col-9);
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+    }
+    &__image{
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        line-height: 0px;
+        overflow: hidden;
+        max-width: 256px;
+    }
+    &__name{
+        @include font_size(16px);
+        & h4{
+            @include font_size(24px);
+            color: $text-01;
+        }
+    }
+    &__title{
+        color: $text-02;
+    }
+    &__bio{
+        @include font_size(14px);
+    } 
+}

@@ -1,0 +1,42 @@
+{%
+    set classes = [
+        'ldnddev-blockquote__items'
+    ]
+%}
+{% if content.field_ldnddev_blockquote_image.0 %}
+    {% set classes = classes|merge(['-two -c3x9']) %}
+{% endif %}
+
+<blockquote {{ attributes.addClass(classes) }}>
+    {% if content.field_ldnddev_blockquote_image.0 %}
+        <div class="ldnddev-blockquote__item">
+            <div class="ldnddev-blockquote__image">
+                {{ content.field_ldnddev_blockquote_image }}
+            </div>
+        </div>
+    {% endif %}
+    <div class="ldnddev-blockquote__item">
+        {% if content.field_ldnddev_blockquote_name.0 %}
+            <div class="ldnddev-blockquote__name">
+                <h4>{{ content.field_ldnddev_blockquote_name.0 }}{% if content.field_ldnddev_blockquote_title.0 %}, <span class="ldnddev-blockquote__title">{{ content.field_ldnddev_blockquote_title.0 }}</span>{% endif %}</h4>            
+            </div>
+        {% endif %}
+        {% if content.field_ldnddev_blockquote_bio.0 %}
+            <div class="ldnddev-blockquote__bio">
+                {{ content.field_ldnddev_blockquote_bio }}
+            </div>
+        {% endif %}
+    </div>
+</blockquote>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Quotation",
+  "creator": {
+    "@type": "Person",
+    "name": "{{ content.field_ldnddev_blockquote_name.0 }}"
+  },
+  "text": "{{ content.field_ldnddev_blockquote_bio|render|strip(0,75)"
+}
+</script>

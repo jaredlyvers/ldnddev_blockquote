@@ -1,0 +1,21 @@
+uuid: 1349e2a4-5956-49cb-9b23-a8bd59d3a38c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ldnddev_blockquote_bio
+    - paragraphs.paragraphs_type.ldnddev_blockquote_item
+  module:
+    - text
+id: paragraph.ldnddev_blockquote_item.field_ldnddev_blockquote_bio
+field_name: field_ldnddev_blockquote_bio
+entity_type: paragraph
+bundle: ldnddev_blockquote_item
+label: 'Blockquote User Bio'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
